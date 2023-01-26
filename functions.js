@@ -18,7 +18,7 @@ export const push = (array, element) => {
 export const pop = (array) => {
   const newLength = length(array);
 
-  if (newLength === 0) return;
+  if (newLength === 0) return undefined;
 
   const deleteElement = array[newLength - 1];
 
@@ -30,7 +30,7 @@ export const pop = (array) => {
 export const shift = (array) => {
   const newLength = length(array);
 
-  if (newLength === 0) return;
+  if (newLength === 0) return undefined;
 
   const deleteElement = array[0];
 
@@ -46,7 +46,7 @@ export const shift = (array) => {
 export const unshift = (array, element) => {
   let newLength = length(array);
 
-  if (newLength === 0) return;
+  if (newLength === 0) return undefined;
 
   for (let i = newLength; i >= 1; i--) {
     array[i] = array[i - 1];
@@ -62,7 +62,7 @@ export const unshift = (array, element) => {
 export const some = (array, condition) => {
   const newLength = length(array);
 
-  if (newLength === 0) return;
+  if (newLength === 0) return undefined;
 
   let result = false;
 
