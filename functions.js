@@ -58,3 +58,19 @@ export const unshift = (array, element) => {
 
   return newLength;
 };
+
+export const some = (array, condition) => {
+  const newLength = length(array);
+
+  if (newLength === 0) return;
+
+  let result = false;
+
+  for (let i = 0; i < newLength; i++) {
+    if (array[i] === condition) {
+      result = true;
+    }
+  }
+
+  return result;
+};
