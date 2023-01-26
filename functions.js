@@ -74,3 +74,26 @@ export const some = (array, condition) => {
 
   return result;
 };
+
+export const every = (array, condition) => {
+  const newLength = length(array);
+
+  if (newLength === 0) return;
+
+  let counter;
+  let result;
+
+  for (let i = 0; i < newLength; i++) {
+    if (array[i] !== condition) {
+      counter += 1;
+    }
+
+    if (counter === 0) {
+      result = true;
+    } else if (counter !== 0) {
+      result = false;
+    }
+  }
+
+  return result;
+};

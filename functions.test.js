@@ -9,7 +9,7 @@ describe('Given length function', () => {
       expect(result).toBe(expected);
     });
 
-    test('Then if array`s lenght is 5 the result should be 5', () => {
+    test('Then if the array is empty, return undefined', () => {
       const arrayTest = [];
       const expected = 0;
       const result = length(arrayTest);
@@ -28,7 +28,7 @@ describe('Given push function', () => {
       expect(result).toBe(expected);
     });
 
-    test('Then the element adds to the array and the length grows n-element', () => {
+    test('Then if the array is empty, return 1', () => {
       const arrayTest = [];
       const element = 'Leandro';
       const expected = 1;
@@ -47,7 +47,7 @@ describe('Given pop function', () => {
       expect(result).toBe(expected);
     });
 
-    test('Then the last element will be deleted will be returned', () => {
+    test('Then if the array is empty, return undefined', () => {
       const arrayTest = [];
       const expected = undefined;
       const result = pop(arrayTest);
@@ -65,7 +65,7 @@ describe('Given shift function', () => {
       expect(result).toBe(expected);
     });
 
-    test('Then the first element will be deleted will be returned', () => {
+    test('Then if the array is empty, return undefined', () => {
       const arrayTest = [];
       const expected = undefined;
       const result = shift(arrayTest);
@@ -84,7 +84,7 @@ describe('Given unshift function', () => {
       expect(result).toBe(expected);
     });
 
-    test('Then n-element will be added to the beginning of the Array', () => {
+    test('Then if the array is empty, return undefined', () => {
       const arrayTest = [];
       const element = 'Leandro';
       const expected = undefined;
@@ -104,7 +104,35 @@ describe('Given some function', () => {
       expect(result).toBe(expected);
     });
 
-    test('Then if at least one element match with the condition, return true, else false', () => {
+    test('Then if the array is empty, return undefined', () => {
+      const arrayTest = [];
+      const condition = 'Cova';
+      const expected = undefined;
+      const result = some(arrayTest, condition);
+      expect(result).toBe(expected);
+    });
+  });
+});
+
+describe('Given every function', () => {
+  describe('When we have an Array and a condition', () => {
+    test('Then if all the elements match with the condition, then returns true, else false', () => {
+      const arrayTest = ['Cova', 'Cova', 'Cova'];
+      const condition = 'Cova';
+      const expected = true;
+      const result = some(arrayTest, condition);
+      expect(result).toBe(expected);
+    });
+
+    test('Then if no elements match with the condition, then returns false', () => {
+      const arrayTest = ['Leandro', 'pepe'];
+      const condition = 'Cova';
+      const expected = false;
+      const result = some(arrayTest, condition);
+      expect(result).toBe(expected);
+    });
+
+    test('Then if the array is empty, return undefined', () => {
       const arrayTest = [];
       const condition = 'Cova';
       const expected = undefined;
