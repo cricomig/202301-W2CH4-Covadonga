@@ -1,4 +1,4 @@
-import { length, push, pop, shift, unshift, some } from './functions.js';
+import { length, push, pop, shift, unshift, some, every } from './functions.js';
 
 describe('Given length function', () => {
   describe('When we have an Array', () => {
@@ -117,10 +117,10 @@ describe('Given some function', () => {
 describe('Given every function', () => {
   describe('When we have an Array and a condition', () => {
     test('Then if all the elements match with the condition, then returns true, else false', () => {
-      const arrayTest = ['Cova', 'Cova', 'Cova'];
-      const condition = 'Cova';
+      const arrayTest = [1, 1, 1];
+      const condition = 1;
       const expected = true;
-      const result = some(arrayTest, condition);
+      const result = every(arrayTest, condition);
       expect(result).toBe(expected);
     });
 
@@ -128,7 +128,7 @@ describe('Given every function', () => {
       const arrayTest = ['Leandro', 'pepe'];
       const condition = 'Cova';
       const expected = false;
-      const result = some(arrayTest, condition);
+      const result = every(arrayTest, condition);
       expect(result).toBe(expected);
     });
 
@@ -136,7 +136,7 @@ describe('Given every function', () => {
       const arrayTest = [];
       const condition = 'Cova';
       const expected = undefined;
-      const result = some(arrayTest, condition);
+      const result = every(arrayTest, condition);
       expect(result).toBe(expected);
     });
   });

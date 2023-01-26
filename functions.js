@@ -78,19 +78,19 @@ export const some = (array, condition) => {
 export const every = (array, condition) => {
   const newLength = length(array);
 
-  if (newLength === 0) return;
+  if (newLength === 0) return undefined;
 
-  let counter;
+  let counter = 0;
   let result;
 
   for (let i = 0; i < newLength; i++) {
     if (array[i] !== condition) {
-      counter += 1;
+      counter++;
     }
 
     if (counter === 0) {
       result = true;
-    } else if (counter !== 0) {
+    } else {
       result = false;
     }
   }
